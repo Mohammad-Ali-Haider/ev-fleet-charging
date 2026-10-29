@@ -22,7 +22,7 @@ services:
       DB_USER: evfleet
       DB_PASSWORD: ${EV_DB_PASSWORD:-local-demo-db-password}
       EV_JWT_SECRET: ${EV_JWT_SECRET:-local-demo-signing-key-not-for-production-use}
-    ports: ["127.0.0.1:8016:8106"]
+    ports: ["127.0.0.1:8106:8106"]
     depends_on:
       db: {condition: service_healthy}
     restart: unless-stopped

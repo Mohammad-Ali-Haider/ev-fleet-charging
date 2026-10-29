@@ -1,0 +1,30 @@
+name: moveinsync-case-6
+# Works with a plain `docker compose up --build`: the defaults below are for a local demo only and listen on 127.0.0.1.
+# Real deployments supply their own EV_DB_PASSWORD and EV_JWT_SECRET (see .env.example).
+services:
+  db:
+    image: postgres:17.6
+    environment:
+      POSTGRES_DB: evfleet_java
+      POSTGRES_USER: evfleet
+      POSTGRES_PASSWORD: ${EV_DB_PASSWORD:-local-demo-db-password}
+    ports: ["127.0.0.1:5546:5432"]
+    volumes: ["postgres_data:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U evfleet -d evfleet_java"]
+      interval: 2s
+      timeout: 2s
+      retries: 30
+  api:
+    build: .
+    environment:
+      DATABASE_URL: jdbc:postgresql://db:5432/evfleet_java
+      DB_USER: evfleet
+      DB_PASSWORD: ${EV_DB_PASSWORD:-local-demo-db-password}
+      EV_JWT_SECRET: ${EV_JWT_SECRET:-local-demo-signing-key-not-for-production-use}
+    ports: ["127.0.0.1:8016:8106"]
+    depends_on:
+      db: {condition: service_healthy}
+    restart: unless-stopped
+volumes:
+  postgres_data:

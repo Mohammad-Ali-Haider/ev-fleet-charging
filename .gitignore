@@ -1,0 +1,12 @@
+.runtime/
+.cache/
+.m2/
+target/
+.env
+.env.*
+!.env.example
+*.log
+docs/rendered/
+
+# Personal study notes, not part of the submission
+notes/

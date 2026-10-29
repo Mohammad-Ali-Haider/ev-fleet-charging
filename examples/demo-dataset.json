@@ -1,0 +1,93 @@
+{
+  "start" : 0,
+  "end" : 20000,
+  "locations" : [ {
+    "id" : "hub",
+    "xM" : 0,
+    "yM" : 0
+  }, {
+    "id" : "office",
+    "xM" : 3000,
+    "yM" : 0
+  }, {
+    "id" : "home",
+    "xM" : 8000,
+    "yM" : 0
+  } ],
+  "vehicles" : [ {
+    "id" : "ev-a",
+    "capacityWh" : 60000,
+    "energyWh" : 13000,
+    "whPerKm" : 200,
+    "location" : "hub",
+    "availableAt" : 0,
+    "maxPowerW" : 60000,
+    "connector" : "CCS",
+    "acBp" : 10000
+  }, {
+    "id" : "ev-b",
+    "capacityWh" : 60000,
+    "energyWh" : 28000,
+    "whPerKm" : 220,
+    "location" : "office",
+    "availableAt" : 0,
+    "maxPowerW" : 60000,
+    "connector" : "CCS",
+    "acBp" : 10000
+  } ],
+  "trips" : [ {
+    "id" : "trip-1",
+    "origin" : "office",
+    "destination" : "home",
+    "start" : 1800,
+    "durationS" : 900,
+    "distanceM" : 22000,
+    "latestFinish" : 2800,
+    "employeeSubject" : "demo-employee"
+  }, {
+    "id" : "trip-2",
+    "origin" : "home",
+    "destination" : "office",
+    "start" : 4000,
+    "durationS" : 900,
+    "distanceM" : 20000,
+    "latestFinish" : 5000,
+    "employeeSubject" : "demo-employee"
+  }, {
+    "id" : "trip-3",
+    "origin" : "office",
+    "destination" : "hub",
+    "start" : 7000,
+    "durationS" : 1200,
+    "distanceM" : 35000,
+    "latestFinish" : 8500,
+    "employeeSubject" : "demo-employee"
+  } ],
+  "chargers" : [ {
+    "id" : "plug-1",
+    "hubId" : "hub",
+    "location" : "hub",
+    "powerW" : 60000,
+    "connector" : "CCS",
+    "outages" : [ ]
+  } ],
+  "tariffs" : [ {
+    "start" : 0,
+    "end" : 3000,
+    "microsPerKwh" : 8000000
+  }, {
+    "start" : 3000,
+    "end" : 20000,
+    "microsPerKwh" : 14000000
+  } ],
+  "trafficBp" : 10000,
+  "speedMps" : 10,
+  "efficiencyBp" : 9000,
+  "slowBp" : 3500,
+  "modelVersion" : "offline-euclidean-v1",
+  "blockedRoutes" : [ ],
+  "history" : [ ],
+  "historyAssignments" : { },
+  "prefixEvidence" : null,
+  "asOf" : null
+}

@@ -1,0 +1,9 @@
+{
+  "os": "Windows-11-10.0.26300-SP0",
+  "cpu": "AMD Ryzen AI 9 HX 370 w/ Radeon 890M",
+  "logicalCpus": 24,
+  "jdk": "openjdk version \"17.0.19\" 2026-04-21\nOpenJDK Runtime Environment Temurin-17.0.19+10 (build 17.0.19+10)\nOpenJDK 64-Bit Server VM Temurin-17.0.19+10 (build 17.0.19+10, mixed mode, sharing)",
+  "postgres": "17.6, Linux Debian Compose container; loopback port 5546; isolated test database",
+  "sharedMachine": true,
+  "ramGiB": 31.12
+}

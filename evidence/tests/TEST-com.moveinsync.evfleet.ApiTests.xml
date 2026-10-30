@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.moveinsync.evfleet.ApiTests" time="7.02" tests="2" errors="0" skipped="0" failures="0">
+  <testcase name="retainedFutureEmployeeVisibilityAndCostAccounting" classname="com.moveinsync.evfleet.ApiTests" time="1.893">
+    </testcase>
+  <testcase name="authenticationRolesSafeErrorsAndIsolation" classname="com.moveinsync.evfleet.ApiTests" time="0.221">
+    </testcase>
+</testsuite>

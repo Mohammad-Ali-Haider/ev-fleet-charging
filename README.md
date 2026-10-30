@@ -106,6 +106,11 @@ To run in the background instead, use `docker compose up --build -d`. Then `dock
 
 ## How it works
 
+**Design approach.** Safety first, cost second: the hard rules (15% battery floor, one cab per charger, trip times) are never traded for a cheaper
+plan. The planner is a fast heuristic, and an independent validator is the final gate: a plan that breaks a rule is never published. When something
+changes mid-shift, the system repairs locally (the affected cab and its nearest neighbours) instead of re-planning the whole fleet, so drivers see as
+few changes as possible.
+
 1. **Batches.** Trips that overlap in time form a batch, since one cab can serve at most one trip of a batch.
 2. **Assignment.** Each batch is solved with the **Hungarian algorithm**. Trips covered come first, then (when repairing) fewest changed
    assignments, then least empty driving.
@@ -237,6 +242,22 @@ Profiling showed exact `BigInteger` arithmetic was most of the time. We then mad
 
 The full step-by-step table is in [ARCHITECTURE.md §11](docs/ARCHITECTURE.md#11-how-the-design-evolved).
 
+## Failure handling
+
+| Failure | What happens |
+|---|---|
+| Duplicate request or event | The same job comes back; nothing is planned twice. The same id with a different payload gets 409. |
+| Out-of-order event | An older sequence number than the last one seen is ignored (`IGNORED_OLD`). |
+| Worker crashes while publishing | Publishing is one transaction. The job's lease expires and another worker retries it; a late worker is fenced off. |
+| Live repair fails | One full re-plan is queued automatically. |
+| Planner runs out of time | It stops cleanly and publishes a valid plan; trips it had no time for become backups (`SEARCH_BUDGET`). |
+| Database down | 503 `DATABASE_UNAVAILABLE`, nothing half-written, and the API recovers by itself when the database is back. |
+| Planner bug or invalid plan | The validator blocks it; the job fails and the previous plan stays. |
+| Unsafe battery reading (below 15%) | An incident is raised and planning stops for that company until the shift is re-imported. |
+
+The tests cover these cases (see [Tests](#tests)). The full table, with what the user sees, is in the
+[design note §7](docs/DESIGN-NOTE.md#7-failure-modes).
+
 ## Assumptions, trade-offs and limits
 
 **Assumptions:**
@@ -246,7 +267,10 @@ The full step-by-step table is in [ARCHITECTURE.md §11](docs/ARCHITECTURE.md#11
 - no regenerative braking, hub power limit or battery ageing.
 
 **Trade-offs:**
-- **Consistency over throughput.** One writer per tenant at a time. An event that arrives while a repair is pending gets 409 and must be retried.
+- **Consistency over availability.** When the database is down the API refuses writes (503) instead of accepting work it cannot save. One writer
+  per tenant at a time: an event that arrives while a repair is pending gets 409 and must be retried, rather than being merged.
+- **Latency over optimality in live re-plans.** A repair reopens only the affected cab and the two nearest, which keeps it well under 2 seconds
+  (about 0.25 s measured) and leaves most assignments unchanged. A full re-plan might find a slightly cheaper plan.
 - **Heuristic, not optimal.** Batch-by-batch assignment and a depth-one rescue can miss better global arrangements. The lower bound is weak on busy
   days.
 - **Unsafe readings stop the tenant.** A reading below 15%, or one taken mid-trip, raises a tenant-wide incident instead of guessing. Isolating just

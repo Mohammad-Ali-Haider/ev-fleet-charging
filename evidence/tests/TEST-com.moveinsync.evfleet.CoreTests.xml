@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.moveinsync.evfleet.CoreTests" time="0.854" tests="32" errors="0" skipped="0" failures="0">
+  <testcase name="chargingCurveTariffsAndIndependentNumerics" classname="com.moveinsync.evfleet.CoreTests" time="0.026" />
+  <testcase name="unrelatedActiveActionsDoNotBlockFailure(String)[1]" classname="com.moveinsync.evfleet.CoreTests" time="0.011" />
+  <testcase name="unrelatedActiveActionsDoNotBlockFailure(String)[2]" classname="com.moveinsync.evfleet.CoreTests" time="0.002" />
+  <testcase name="unrelatedActiveActionsDoNotBlockFailure(String)[3]" classname="com.moveinsync.evfleet.CoreTests" time="0.003" />
+  <testcase name="budgetFallbackLowerBoundAndLexicographicScore" classname="com.moveinsync.evfleet.CoreTests" time="0.016" />
+  <testcase name="belowFloorIsAnIncident" classname="com.moveinsync.evfleet.CoreTests" time="0.002" />
+  <testcase name="interruptedChargeRequiresConfirmedEnergy" classname="com.moveinsync.evfleet.CoreTests" time="0.002" />
+  <testcase name="midShiftDriftMovesOnlyTheUnreachableTripAndChargesTheCab" classname="com.moveinsync.evfleet.CoreTests" time="0.003" />
+  <testcase name="impossiblePassengerEnergyAddsToSafeBoundAndFrozenValuesCannotMutate" classname="com.moveinsync.evfleet.CoreTests" time="0.002" />
+  <testcase name="independentCapacityAndOutageSweep" classname="com.moveinsync.evfleet.CoreTests" time="0.002" />
+  <testcase name="prefixEvidenceIsIndependentlyReplayedAndCacheIsLocal" classname="com.moveinsync.evfleet.CoreTests" time="0.003" />
+  <testcase name="calendarEndpointCompatibilityAndOutage" classname="com.moveinsync.evfleet.CoreTests" time="0.001" />
+  <testcase name="greedyTrapIsFixedByLocalNeighbourhood" classname="com.moveinsync.evfleet.CoreTests" time="0.002" />
+  <testcase name="trafficAcAndMissingEvidenceAreExplicit" classname="com.moveinsync.evfleet.CoreTests" time="0.002" />
+  <testcase name="backupReasonNamesChargerCongestion" classname="com.moveinsync.evfleet.CoreTests" time="0.004" />
+  <testcase name="approachAndEmptyMovementMustRemainAboveFloor" classname="com.moveinsync.evfleet.CoreTests" time="0.002" />
+  <testcase name="chargingBeforeFirstPickupIsNotPruned" classname="com.moveinsync.evfleet.CoreTests" time="0.001" />
+  <testcase name="validatorRejectsCorruption(String)[1]" classname="com.moveinsync.evfleet.CoreTests" time="0.002" />
+  <testcase name="validatorRejectsCorruption(String)[2]" classname="com.moveinsync.evfleet.CoreTests" time="0.001" />
+  <testcase name="validatorRejectsCorruption(String)[3]" classname="com.moveinsync.evfleet.CoreTests" time="0.001" />
+  <testcase name="validatorRejectsCorruption(String)[4]" classname="com.moveinsync.evfleet.CoreTests" time="0.001" />
+  <testcase name="validatorRejectsCorruption(String)[5]" classname="com.moveinsync.evfleet.CoreTests" time="0.001" />
+  <testcase name="validatorRejectsCorruption(String)[6]" classname="com.moveinsync.evfleet.CoreTests" time="0.001" />
+  <testcase name="validatorRejectsCorruption(String)[7]" classname="com.moveinsync.evfleet.CoreTests" time="0.001" />
+  <testcase name="validatorRejectsCorruption(String)[8]" classname="com.moveinsync.evfleet.CoreTests" time="0.002" />
+  <testcase name="validatorRejectsCorruption(String)[9]" classname="com.moveinsync.evfleet.CoreTests" time="0.001" />
+  <testcase name="floorBoundary(long, int)[1]" classname="com.moveinsync.evfleet.CoreTests" time="0.007" />
+  <testcase name="floorBoundary(long, int)[2]" classname="com.moveinsync.evfleet.CoreTests" time="0.001" />
+  <testcase name="floorBoundary(long, int)[3]" classname="com.moveinsync.evfleet.CoreTests" time="0.002" />
+  <testcase name="incrementalScaleRepairBoundsChurnAndPreservesCompleteCoverage" classname="com.moveinsync.evfleet.CoreTests" time="0.451" />
+  <testcase name="chargingMovesIntoTheCheapestWindowWhenTheTimetableAllows" classname="com.moveinsync.evfleet.CoreTests" time="0.203" />
+  <testcase name="inputRulesRejectOutOfRangeValues" classname="com.moveinsync.evfleet.CoreTests" time="0.001" />
+</testsuite>

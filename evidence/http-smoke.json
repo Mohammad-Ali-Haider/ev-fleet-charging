@@ -1,0 +1,22 @@
+{
+  "language": "Java / Spring Boot",
+  "transport": "real loopback HTTP 8106 + PostgreSQL",
+  "fixture": "2 vehicles / 1 charger / 3 trips",
+  "initialValid": true,
+  "socRepairValid": true,
+  "chargerFailureValid": true,
+  "socRepairRoundtripPollingS": 0.12633200001437217,
+  "finalBackups": 2,
+  "demoHtmlServed": true,
+  "readLoad": {
+    "n": 80,
+    "concurrency": 4,
+    "p50S": 0.01179359998786822,
+    "p99S": 0.032265900052152574,
+    "maxS": 0.032265900052152574,
+    "throughputRps": 233.74753397450186,
+    "errors": 0
+  },
+  "databaseOutage": "UNVERIFIED: externally managed database",
+  "browserVisualCheck": "Pending separate browser check"
+}

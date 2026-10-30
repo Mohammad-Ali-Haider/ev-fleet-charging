@@ -1,0 +1,53 @@
+{
+  "language": "Java 17 / Spring Boot",
+  "testsRun": 48,
+  "testsPassed": 48,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "database": "17.6, Linux Debian Compose container; loopback port 5546; isolated test database",
+  "formatCheck": "Spotless 2.44.3 / Eclipse 4.32 passed during Maven verify",
+  "xmlEvidence": "Surefire testcase names and outcomes; environment properties and console output omitted",
+  "suites": [
+    {
+      "name": "com.moveinsync.evfleet.ApiTests",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "6.234"
+    },
+    {
+      "name": "com.moveinsync.evfleet.CoreTests",
+      "tests": "32",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "0.554"
+    },
+    {
+      "name": "com.moveinsync.evfleet.JsonCompatibilityTests",
+      "tests": "1",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "0.079"
+    },
+    {
+      "name": "com.moveinsync.evfleet.PersistenceTests",
+      "tests": "10",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "10.455"
+    },
+    {
+      "name": "com.moveinsync.evfleet.planner.PlannerInternalsTests",
+      "tests": "3",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "0.64"
+    }
+  ]
+}

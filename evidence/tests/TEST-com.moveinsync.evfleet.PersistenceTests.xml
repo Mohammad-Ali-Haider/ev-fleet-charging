@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.moveinsync.evfleet.PersistenceTests" time="11.14" tests="10" errors="0" skipped="0" failures="0">
+  <testcase name="rollbackAndLostCommitResponseAreDistinct" classname="com.moveinsync.evfleet.PersistenceTests" time="0.335" />
+  <testcase name="concurrentPublishersHaveExactlyOneWinner" classname="com.moveinsync.evfleet.PersistenceTests" time="0.292" />
+  <testcase name="killedProcessRollsBackThenLeaseRecoveryPublishes" classname="com.moveinsync.evfleet.PersistenceTests" time="6.316">
+    </testcase>
+  <testcase name="incidentIsDurableAndCannotBeOverwritten" classname="com.moveinsync.evfleet.PersistenceTests" time="0.305">
+    </testcase>
+  <testcase name="pendingInputsAndPerTenantQueueAdmission" classname="com.moveinsync.evfleet.PersistenceTests" time="2.254">
+    </testcase>
+  <testcase name="concurrentTelemetryCannotActivateAnOldCandidate" classname="com.moveinsync.evfleet.PersistenceTests" time="0.359">
+    </testcase>
+  <testcase name="duplicateRequestAndTenantIsolation" classname="com.moveinsync.evfleet.PersistenceTests" time="0.272">
+    </testcase>
+  <testcase name="failedRepairQueuesOneFallbackThatRecoversDispatchability" classname="com.moveinsync.evfleet.PersistenceTests" time="0.418">
+    </testcase>
+  <testcase name="duplicateAndOutOfOrderEventsAreDurable" classname="com.moveinsync.evfleet.PersistenceTests" time="0.373">
+    </testcase>
+  <testcase name="expiredLeaseIsFencedEvenBeforeReclaim" classname="com.moveinsync.evfleet.PersistenceTests" time="0.209" />
+</testsuite>

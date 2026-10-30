@@ -296,7 +296,7 @@ class CoreTests {
         var error = assertThrows(DomainException.SafetyIncident.class, () -> solve(fixture(8999, true)));
 
         assertEquals("SAFETY_INCIDENT_INITIAL_FLOOR", error.getMessage());
-        assertEquals(400, error.status());
+        assertEquals(409, error.status());
     }
 
     // ---- Live re-planning ----

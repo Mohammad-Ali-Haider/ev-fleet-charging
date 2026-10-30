@@ -1,0 +1,49 @@
+{
+  "samples" : [ {
+    "sumPoolPeakHeapBytes" : 131048376,
+    "vehicles" : 100,
+    "chargers" : 13,
+    "searchExhausted" : false,
+    "backups" : 0,
+    "seconds" : 0.011342,
+    "trips" : 500,
+    "valid" : true
+  }, {
+    "sumPoolPeakHeapBytes" : 214139400,
+    "vehicles" : 300,
+    "chargers" : 40,
+    "searchExhausted" : false,
+    "backups" : 0,
+    "seconds" : 0.042793,
+    "trips" : 1500,
+    "valid" : true
+  }, {
+    "sumPoolPeakHeapBytes" : 343476704,
+    "vehicles" : 600,
+    "chargers" : 80,
+    "searchExhausted" : false,
+    "backups" : 0,
+    "seconds" : 0.1756832,
+    "trips" : 3000,
+    "valid" : true
+  }, {
+    "sumPoolPeakHeapBytes" : 350358800,
+    "vehicles" : 1200,
+    "chargers" : 160,
+    "searchExhausted" : false,
+    "backups" : 3,
+    "seconds" : 0.4098564,
+    "trips" : 6000,
+    "valid" : true
+  }, {
+    "sumPoolPeakHeapBytes" : 432602504,
+    "vehicles" : 2000,
+    "chargers" : 266,
+    "searchExhausted" : false,
+    "backups" : 0,
+    "seconds" : 0.9055684,
+    "trips" : 10000,
+    "valid" : true
+  } ],
+  "notes" : "Full planner (construction, rescue, charging re-plan, validation) under a fixed 2-second budget, warm JVM, GC before each size. Sum of heap-pool peaks is approximate, not process RSS. Quality can decline under the time cap while validity remains mandatory."
+}

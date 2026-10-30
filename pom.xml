@@ -103,7 +103,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.5.3</version>
                 <configuration>
-                    <argLine>-Xmx1g -Duser.timezone=UTC -Djava.io.tmpdir=${project.basedir}/.cache/tmp -Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+                    <argLine>-Xmx1g -Duser.timezone=UTC -Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
                     <tempDir>surefire</tempDir>
                 </configuration>
             </plugin>

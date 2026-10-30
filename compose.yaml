@@ -15,6 +15,7 @@ services:
       interval: 2s
       timeout: 2s
       retries: 30
+    restart: unless-stopped
   api:
     build: .
     environment:

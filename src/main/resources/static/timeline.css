@@ -1,0 +1,116 @@
+:root {
+    font: 15px system-ui;
+    color: #18354a;
+    background: #eef3f6;
+}
+
+body {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 22px;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+button {
+    background: #126b73;
+    color: white;
+    padding: 10px 15px;
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+input {
+    padding: 10px;
+    width: 65%;
+    border: 1px solid #aabcc7;
+    border-radius: 6px;
+}
+
+section {
+    background: white;
+    padding: 22px;
+    border-radius: 10px;
+    margin: 15px 0;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    margin: 14px 0;
+}
+
+.label {
+    width: 90px;
+}
+
+.track {
+    position: relative;
+    height: 45px;
+    flex: 1;
+    background: #f0f4f7;
+}
+
+.bar {
+    position: absolute;
+    top: 3px;
+    height: 36px;
+    min-width: 2px;
+    border-radius: 3px;
+    opacity: 0.9;
+    overflow: hidden;
+    color: white;
+    font-size: 11px;
+    padding-top: 4px;
+    box-sizing: border-box;
+}
+
+.TRIP {
+    background: #157589;
+}
+
+.DRIVE {
+    background: #697f9a;
+}
+
+.CHARGE {
+    background: #c77910;
+}
+
+.WAIT {
+    background: #b9c8d0;
+    color: #173949;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+td,
+th {
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+}
+
+pre,
+#status {
+    white-space: pre-wrap;
+}
+
+.summary {
+    font-size: 20px;
+}
+
+.muted {
+    color: #526b7d;
+}
+
+.charging-key {
+    color: #c77910;
+}

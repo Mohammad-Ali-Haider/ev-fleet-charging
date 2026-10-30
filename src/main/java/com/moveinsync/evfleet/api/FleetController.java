@@ -1,11 +1,14 @@
 package com.moveinsync.evfleet.api;
 
+import com.moveinsync.evfleet.application.DisruptionService;
 import com.moveinsync.evfleet.application.PlanQueryService;
 import com.moveinsync.evfleet.application.PlanRequestService;
+import com.moveinsync.evfleet.application.Views.DisruptionOutcome;
 import com.moveinsync.evfleet.application.Views.EmployeeTrips;
 import com.moveinsync.evfleet.application.Views.PlanView;
 import com.moveinsync.evfleet.application.Views.TimelineView;
 import com.moveinsync.evfleet.domain.Dataset;
+import com.moveinsync.evfleet.domain.Disruption;
 import com.moveinsync.evfleet.domain.Reason;
 import com.moveinsync.evfleet.domain.Report;
 import com.moveinsync.evfleet.persistence.model.PlanningJob;
@@ -40,11 +43,14 @@ public class FleetController {
 
     private final PlanRequestService requests;
 
+    private final DisruptionService disruptions;
+
     private final PlanQueryService queries;
 
-    /** Receives the two services it delegates to. */
-    public FleetController(PlanRequestService requests, PlanQueryService queries) {
+    /** Receives the three services it delegates to. */
+    public FleetController(PlanRequestService requests, DisruptionService disruptions, PlanQueryService queries) {
         this.requests = requests;
+        this.disruptions = disruptions;
         this.queries = queries;
     }
 
@@ -104,6 +110,13 @@ public class FleetController {
     @PostMapping("/plans/{id}/validate")
     public Report validate(@AuthenticationPrincipal Jwt jwt, @PathVariable String id) {
         return queries.validate(tenant(jwt), id);
+    }
+
+    /** POST /disruptions: report a battery drift or charger failure. */
+    @PostMapping("/disruptions")
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public DisruptionOutcome disruption(@AuthenticationPrincipal Jwt jwt, @RequestBody Disruption event) {
+        return disruptions.ingest(tenant(jwt), event);
     }
 
     /** GET /me/trips: the signed-in employee's own upcoming trips. */

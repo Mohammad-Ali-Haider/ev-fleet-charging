@@ -8,7 +8,7 @@ or a charger fails.
 Java classes that need neither Spring nor a database.
 
 **Documents:**
-- [docs/DESIGN-NOTE.md](docs/DESIGN_NOTE.md) ([PDF](docs/DESIGN-NOTE.pdf)): the two-page design note, with data model, architecture and sequence
+- [docs/DESIGN-NOTE.md](docs/DESIGN-NOTE.md) ([PDF](docs/DESIGN-NOTE.pdf)): the two-page design note, with data model, architecture and sequence
   diagrams, API, algorithm, failure modes and trade-offs.
 - [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md): the longer deep dive, including the OOP structure and how the design evolved.
 

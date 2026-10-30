@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>EV Fleet Timeline</title>
+        <link rel="stylesheet" href="/timeline.css">
+        <script type="module" src="/timeline.js"></script>
+    </head>
+    <body>
+        <h1>EV fleet · Plan and battery timeline</h1>
+        <p class="muted">
+            A synthetic, local planning demo. Time values are seconds from the dataset's
+            UTC epoch. Hover an action for battery energy; the table is inspectable.
+        </p>
+
+        <section>
+            <label>
+                Bearer token
+                <input id="token" type="password" autocomplete="off"
+                       placeholder="Paste a locally issued operator/admin token">
+            </label>
+            <p>
+                <button id="load">Load current plan</button>
+                <button id="validate">Validate stored plan</button>
+            </p>
+            <div id="status" role="status"></div>
+        </section>
+
+        <section>
+            <div id="summary" class="summary">No plan loaded</div>
+            <div id="timeline"></div>
+            <p>■ Trip · ■ Empty drive · <span class="charging-key">■ Charging</span> · Wait</p>
+        </section>
+
+        <section>
+            <h2>Action details and SOC evidence</h2>
+            <p>
+                Retained future commitments stay fixed during local repair.
+                Completed history precedes the plan's observation boundary.
+            </p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Cab</th>
+                        <th>Action / status</th>
+                        <th>Time</th>
+                        <th>Route</th>
+                        <th>Battery Wh</th>
+                        <th>Trip / charger</th>
+                    </tr>
+                </thead>
+                <tbody id="details"></tbody>
+            </table>
+            <h2>Backup reasons</h2>
+            <pre id="backups"></pre>
+        </section>
+    </body>
+</html>
